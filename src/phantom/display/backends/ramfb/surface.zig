@@ -68,7 +68,7 @@ scale: vizops.vector.Float32Vector2,
 scene: ?*phantom.scene.Base,
 
 pub fn new(alloc: Allocator, options: Options) !*phantom.display.Surface {
-    const fileAccess = try options.fwcfg.accessFile(options.fwcfgName orelse "etc/ramfb");
+    const fileAccess = (try options.fwcfg.accessFile(options.fwcfgName orelse "etc/ramfb")) orelse return error.FileNotFound;
 
     const fb = try phantom.painting.fb.AllocatedFrameBuffer.create(alloc, .{
         .res = options.res,
