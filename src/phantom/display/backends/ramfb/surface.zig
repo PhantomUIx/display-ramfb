@@ -96,6 +96,7 @@ pub fn new(alloc: Allocator, options: Options) !*phantom.display.Surface {
                 .createScene = createScene,
             },
             .displayKind = options.displayKind orelse .compositor,
+            .kind = .output,
             .type = @typeName(Self),
         },
         .fwcfg = options.fwcfg,
@@ -124,7 +125,7 @@ fn info(ctx: *anyopaque) anyerror!phantom.display.Surface.Info {
     const fbInfo = self.fb.info();
     return .{
         .colorFormat = fbInfo.colorFormat,
-        .size = fbInfo.size,
+        .size = fbInfo.res,
     };
 }
 
