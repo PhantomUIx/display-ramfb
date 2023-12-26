@@ -1,5 +1,6 @@
 const std = @import("std");
 const Allocator = std.mem.Allocator;
+const builtin = @import("builtin");
 const phantom = @import("phantom");
 const fio = @import("fio");
 const vizops = @import("vizops");
@@ -18,7 +19,7 @@ pub const Config = extern struct {
 
         return .{
             .addr = std.mem.nativeTo(u64, addr, .big),
-            .fourcc = fourcc,
+            .fourcc = std.mem.nativeTo(u32, fourcc, .big),
             .flags = std.mem.nativeTo(u32, flags, .big),
             .width = std.mem.nativeTo(u32, @intCast(size.value[0]), .big),
             .height = std.mem.nativeTo(u32, @intCast(size.value[1]), .big),
@@ -69,11 +70,26 @@ scene: ?*phantom.scene.Base,
 
 pub fn new(alloc: Allocator, options: Options) !*phantom.display.Surface {
     const fileAccess = (try options.fwcfg.accessFile(options.fwcfgName orelse "etc/ramfb")) orelse return error.FileNotFound;
+    const colorFormat = try vizops.color.fourcc.Value.decode(options.fourcc);
 
     const fb = try phantom.painting.fb.AllocatedFrameBuffer.create(alloc, .{
         .res = options.res,
         .colorspace = .sRGB,
-        .colorFormat = try vizops.color.fourcc.Value.decode(options.fourcc),
+        .colorFormat = switch (colorFormat) {
+            .rg => |rg| .{ .gr = rg },
+            .gr => |gr| .{ .rg = gr },
+            .rgb => |rgb| .{ .bgr = rgb },
+            .bgr => |bgr| .{ .rgb = bgr },
+            .xrgb => |xrgb| .{ .bgrx = xrgb },
+            .xbgr => |xbgr| .{ .rgbx = xbgr },
+            .rgba => |rgba| .{ .argb = rgba },
+            .rgbx => |rgbx| .{ .xbgr = rgbx },
+            .bgrx => |bgrx| .{ .xrgb = bgrx },
+            .argb => |argb| .{ .bgra = argb },
+            .abgr => |abgr| .{ .rgba = abgr },
+            .bgra => |bgra| .{ .argb = bgra },
+            else => colorFormat,
+        },
     });
     errdefer fb.deinit();
 
