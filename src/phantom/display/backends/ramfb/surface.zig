@@ -56,7 +56,7 @@ pub const Options = struct {
     fwcfgName: ?[]const u8 = null,
     displayKind: ?phantom.display.Base.Kind = null,
     res: vizops.vector.UsizeVector2,
-    fourcc: vizops.color.fourcc.Value,
+    fourcc: u32,
     scale: vizops.vector.Float32Vector2 = vizops.vector.Float32Vector2.init(1.0),
 };
 
