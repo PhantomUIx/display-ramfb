@@ -77,7 +77,7 @@ pub fn new(alloc: Allocator, options: Options) !*phantom.display.Surface {
     });
     errdefer fb.deinit();
 
-    var cfg = try Config.init(try fb.addr(), options.fourcc, 0, options.res);
+    var cfg = try Config.init(@intFromPtr(try fb.addr()), options.fourcc, 0, options.res);
     try fileAccess.write(std.mem.asBytes(&cfg));
     cfg.addr = 0;
     try fileAccess.read(std.mem.asBytes(&cfg));
