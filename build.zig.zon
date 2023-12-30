@@ -4,8 +4,8 @@
   .paths = .{"."},
   .dependencies = .{
     .fio = .{
-      .url = "https://github.com/MidstallSoftware/fio/archive/7f9758c2199610365918c5b6b9cfd840782bc9c9.tar.gz",
-      .hash = "12200fd5b82c1e15ba483137874fd9aafc872c56c064a0d8fd1e6d97be63980f515c",
+      .url = "https://github.com/MidstallSoftware/fio/archive/c76c91133ba00e41816645bc489883eb2ddb586a.tar.gz",
+      .hash = "122054d17c4f5a18a1e34c155bbc92da1d9c956b7e56d64416e2a142f4dfb29d7da2",
     },
     .phantom = .{
       .url = "https://github.com/PhantomUIx/core/archive/0cbea8f53e650f4864bf41c372c330a050710c10.tar.gz",
