@@ -4,16 +4,16 @@
   .paths = .{"."},
   .dependencies = .{
     .fio = .{
-      .url = "https://github.com/MidstallSoftware/fio/archive/cac316692b123a9c9f34c4a6e2a0c5d24f3daf56.tar.gz",
-      .hash = "122010c37c42544d54529fc20f4d1bdb15ffac4a932874eeefe0e2d04605d5ed38aa",
+      .url = "https://github.com/MidstallSoftware/fio/archive/7ea611a2b2061f5d71995d89765d7cafcf08238e.tar.gz",
+      .hash = "12209ce9bccccd6d6dd4a1486e0782f676e880dfc78c50d5e995d76699cb2615e4cf",
     },
     .phantom = .{
-      .url = "https://github.com/PhantomUIx/core/archive/8722bd0ae15725d10d8e394cab550c29448c79ad.tar.gz",
-      .hash = "12207e70d80d46650c4318dec90ffcda00f20f2fba2e08ca3b0223b38a1fa48b7120",
+      .url = "https://github.com/PhantomUIx/core/archive/63912d18801ae6190ab4ce15d2fd8303b797d649.tar.gz",
+      .hash = "1220fcd5a5f024f9d9d40dd68c09f3a678fe73a40120d27b415156b81690cf5d91f4",
     },
     .vizops = .{
-      .url = "https://github.com/MidstallSoftware/vizops/archive/8b8499e195d8cf66e9b13ed1c80b24ee27420a29.tar.gz",
-      .hash = "1220f478cda5edf75a0b837e04c741631e4136e422b4257ccbd09d4cccaf736ac312",
+      .url = "https://github.com/MidstallSoftware/vizops/archive/75ed00f8eb217d774878fc0416d882b5ebce2b07.tar.gz",
+      .hash = "1220f72b311022cffc91f2b08f1e958bf60e1ae0c4f84b7116b1de17ddfbad9b71e3",
     },
   },
 }
