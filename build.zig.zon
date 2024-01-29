@@ -1,19 +1,19 @@
 .{
-  .name = "phantom.display.ramfb",
-  .version = "0.1.0",
-  .paths = .{"."},
-  .dependencies = .{
-    .fio = .{
-      .url = "https://github.com/MidstallSoftware/fio/archive/7ea611a2b2061f5d71995d89765d7cafcf08238e.tar.gz",
-      .hash = "12209ce9bccccd6d6dd4a1486e0782f676e880dfc78c50d5e995d76699cb2615e4cf",
+    .name = "phantom.display.ramfb",
+    .version = "0.1.0",
+    .paths = .{"."},
+    .dependencies = .{
+        .fio = .{
+            .url = "https://github.com/MidstallSoftware/fio/archive/7ea611a2b2061f5d71995d89765d7cafcf08238e.tar.gz",
+            .hash = "12209ce9bccccd6d6dd4a1486e0782f676e880dfc78c50d5e995d76699cb2615e4cf",
+        },
+        .phantom = .{
+            .url = "https://github.com/PhantomUIx/core/archive/13cb70007519475065743509e3a908c7105ded1d.tar.gz",
+            .hash = "12203b3735b8056b34491d5aa777ca5689d1031b1be03690f2cb5b18f6bacd42424f",
+        },
+        .vizops = .{
+            .url = "https://github.com/MidstallSoftware/vizops/archive/75ed00f8eb217d774878fc0416d882b5ebce2b07.tar.gz",
+            .hash = "1220f72b311022cffc91f2b08f1e958bf60e1ae0c4f84b7116b1de17ddfbad9b71e3",
+        },
     },
-    .phantom = .{
-      .url = "https://github.com/PhantomUIx/core/archive/63912d18801ae6190ab4ce15d2fd8303b797d649.tar.gz",
-      .hash = "1220fcd5a5f024f9d9d40dd68c09f3a678fe73a40120d27b415156b81690cf5d91f4",
-    },
-    .vizops = .{
-      .url = "https://github.com/MidstallSoftware/vizops/archive/75ed00f8eb217d774878fc0416d882b5ebce2b07.tar.gz",
-      .hash = "1220f72b311022cffc91f2b08f1e958bf60e1ae0c4f84b7116b1de17ddfbad9b71e3",
-    },
-  },
 }
